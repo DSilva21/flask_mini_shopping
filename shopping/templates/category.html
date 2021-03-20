@@ -1,0 +1,28 @@
+<html>
+    <body>
+        {{head}}
+
+        <table border=1>
+            <tr>
+                <tr>           
+                    {% for row in data %}
+                    <td><img src="/static/image/{{row[5]}}.jpg"/></td>
+                    {% endfor %}
+                </tr>
+                
+                {% for row in data %}    
+                <td><a href="http://127.0.0.1:5000/product_info/?no={{row[2]}}">{{row[2]}}</a></td>   
+                {% endfor %}
+                </tr>
+
+                <tr>
+                {% for row in data %}    
+                <td>가격:{{row[3]}}</td>   
+                {% endfor %}
+                </tr>
+
+               
+        </table>
+
+    </body>
+</html>

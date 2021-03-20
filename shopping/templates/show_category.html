@@ -1,0 +1,45 @@
+<html>
+    <body>
+        
+        카테고리별
+        전체보기
+        {% for row,i in zip(data,range(3)) %}
+        <table border=1>
+            <tr>
+                <th colspan="100">
+    
+                    <a href="http://127.0.0.1:5000/category/?no={{head[i]}}">{{head[i]}}</a>
+                </th>
+            </tr>
+
+            <tr>           
+                {% for d in row %}
+                <td><img src="/static/image/{{d[5]}}.jpg"/></td>
+                {% endfor %}
+            </tr>
+
+            <tr>   
+            {% for d in row %}
+            <td>{{d[1]}}</td>
+            {% endfor %}        
+            </tr>        
+                
+            <tr>   
+                {% for d in row %}
+                <td><a href="http://127.0.0.1:5000/product_info/?no={{d[2]}}">{{d[2]}}</a></td>
+                {% endfor %}        
+            </tr>
+
+            <tr>   
+                {% for d in row %}
+                <td>{{d[3]}}</td>
+                {% endfor %}        
+            </tr>
+
+        </table>
+        <br>
+        {% endfor %}
+    </body>
+
+
+</html>
